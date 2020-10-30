@@ -7,7 +7,7 @@ import "firebase/auth"; // Google authentication
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
-const vars = require("../hiddenVars.json");
+const vars = require("./hiddenVars.json");
 
 // Initialize our Firebase project
 firebase.initializeApp({

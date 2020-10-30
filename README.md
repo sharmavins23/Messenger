@@ -1,5 +1,8 @@
 # Messenger
 
+This is a small project inspired by Fireship.io's (exactly similar) project. It
+implements database integration and authentication through Firebase.
+
 # License TL;DR
 
 This project is distributed under the MIT license. This is a paraphrasing of a

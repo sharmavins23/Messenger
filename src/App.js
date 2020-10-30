@@ -1,23 +1,23 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import "./App.css";
+
 import firebase from "firebase/app";
 import "firebase/firestore"; // Database integration
 import "firebase/auth"; // Google authentication
-require("dotenv").config();
-
-// Hooks
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
+const vars = require("../hiddenVars.json");
+
 // Initialize our Firebase project
 firebase.initializeApp({
-    apiKey: process.env.APIKEY,
-    authDomain: "messenger-sharmavins23.firebaseapp.com",
-    databaseURL: "https://messenger-sharmavins23.firebaseio.com",
-    projectId: "messenger-sharmavins23",
-    storageBucket: "messenger-sharmavins23.appspot.com",
-    messagingSenderId: process.env.MESSAGINGSENDERID,
-    appId: process.env.APPID,
+    apiKey: vars.apiKey,
+    authDomain: vars.authDomain,
+    databaseURL: vars.databaseURL,
+    projectId: vars.projectId,
+    storageBucket: vars.storageBucket,
+    messagingSenderId: vars.messagingSenderId,
+    appId: vars.appId,
 });
 
 // Global variable references
@@ -29,7 +29,10 @@ function App() {
 
     return (
         <div className="App">
-            <header className="App-header"></header>
+            <header>
+                <h1>Messenger</h1>
+                <SignOut />
+            </header>
 
             <section>{user ? <ChatRoom /> : <SignIn />}</section>
         </div>
